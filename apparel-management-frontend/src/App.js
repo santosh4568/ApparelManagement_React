@@ -1,20 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ApparelForm from './components/ApparelForm';
-import ApparelList from './components/ApparelList';
+import Landing from './components/LandingPage';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
+import AddApparel from './components/AddApparel';
+import ViewApparel from './components/ViewApparel';
+import Logout from './components/Logout';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div className="App">
-        <h1>Apparel Management</h1>
-        <Routes>
-          <Route path="/" element={<ApparelForm />} />
-          <Route path="/apparels" element={<ApparelList />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/AddApparel" element={<AddApparel />} />
+        <Route path="/ViewApparel" element={<ViewApparel />} />
+        <Route path="/logout" element={<Logout />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;

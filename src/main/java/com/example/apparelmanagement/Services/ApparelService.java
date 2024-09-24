@@ -1,6 +1,5 @@
 package com.example.apparelmanagement.Services;
 
-
 import com.example.apparelmanagement.Model.Apparel;
 import com.example.apparelmanagement.Repository.ApparelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +33,7 @@ public class ApparelService {
         if (existingApparel != null) {
             existingApparel.setName(apparel.getName());
             existingApparel.setCategory(apparel.getCategory());
+            existingApparel.setStatus(apparel.getStatus()); // Updated field name
             return apparelRepository.save(existingApparel);
         }
         return null;

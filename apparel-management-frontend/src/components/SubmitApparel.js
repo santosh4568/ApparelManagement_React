@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const ApparelForm = () => {
+const SubmitApparel = () => {
   const [apparel, setApparel] = useState({
     name: '',
-    condition: '',
-    type: ''
+    status: 'disposal', // default status
+    category: ''
   });
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +24,6 @@ const ApparelForm = () => {
       });
       if (response.ok) {
         alert('Apparel submitted successfully');
-        navigate('/apparels');
       } else {
         alert('Failed to submit apparel');
       }
@@ -43,16 +40,20 @@ const ApparelForm = () => {
         <input type="text" name="name" value={apparel.name} onChange={handleChange} required />
       </div>
       <div>
-        <label>Condition:</label>
-        <input type="text" name="condition" value={apparel.condition} onChange={handleChange} required />
+        <label>Status:</label>
+        <select name="status" value={apparel.status} onChange={handleChange}>
+          <option value="disposal">Disposal</option>
+          <option value="donation">Donation</option>
+          <option value="recycling">Recycling</option>
+        </select>
       </div>
       <div>
-        <label>Type:</label>
-        <input type="text" name="type" value={apparel.type} onChange={handleChange} required />
+        <label>Category:</label>
+        <input type="text" name="category" value={apparel.category} onChange={handleChange} required />
       </div>
       <button type="submit">Submit</button>
     </form>
   );
 };
 
-export default ApparelForm;
+export default SubmitApparel;

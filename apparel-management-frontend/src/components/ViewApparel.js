@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ApparelSearch from './ApparelSearch';
+import './CSS/ViewApparel.css';
 
-const ApparelList = () => {
+const ViewApparel = () => {
   const [apparels, setApparels] = useState([]);
   const [filteredApparels, setFilteredApparels] = useState([]);
 
@@ -28,15 +29,22 @@ const ApparelList = () => {
   };
 
   return (
-    <div>
-      <ApparelSearch onSearch={handleSearch} />
-      <ul>
-        {filteredApparels.map(apparel => (
-          <li key={apparel.id}>{apparel.name} - {apparel.status} - {apparel.category}</li>
-        ))}
-      </ul>
+    <div className="view-apparel-container">
+      <div className="view-apparel-content">
+        <h2>View Apparel</h2>
+        <ApparelSearch onSearch={handleSearch} />
+        <ul className="apparel-list">
+          {filteredApparels.map(apparel => (
+            <li key={apparel.id} className="apparel-item">
+              <span className="apparel-name">{apparel.name}</span>
+              <span className="apparel-status">{apparel.status}</span>
+              <span className="apparel-category">{apparel.category}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
-export default ApparelList;
+export default ViewApparel;

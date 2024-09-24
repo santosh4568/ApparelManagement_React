@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "users")
 public class User {
 
     @Id
@@ -21,20 +20,18 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
-    private String roles;
+
 
 
     public User() {
         super();
     }
 
-    public User(Long id, String username, String password, String email, String roles) {
+    public User(Long id, String username, String password, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.roles = roles;
     }
 
     public Long getId() {
@@ -69,13 +66,6 @@ public class User {
         this.email = email;
     }
 
-    public String getRoles() {
-        return roles;
-    }
-
-    public void setRoles(String roles) {
-        this.roles = roles;
-    }
 
     // Getters and Setters
 }

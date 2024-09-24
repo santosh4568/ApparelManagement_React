@@ -11,14 +11,14 @@ public class Apparel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String Apparelcondition;
     private String category;
+    private String status; // Updated field name
 
-    public Apparel(Long id, String name, String condition, String category) {
+    public Apparel(Long id, String name, String category, String status) {
         this.id = id;
         this.name = name;
-        this.Apparelcondition = condition;
         this.category = category;
+        this.status = status; // Updated field name
     }
 
     public Apparel() {
@@ -41,14 +41,6 @@ public class Apparel {
         this.name = name;
     }
 
-    public String getCondition() {
-        return Apparelcondition;
-    }
-
-    public void setCondition(String condition) {
-        this.Apparelcondition = condition;
-    }
-
     public String getCategory() {
         return category;
     }
@@ -57,5 +49,11 @@ public class Apparel {
         this.category = category;
     }
 
-    // Getters and Setters
+    public String getStatus() {
+        return status; // Updated field name
+    }
+
+    public void setStatus(String status) {
+        this.status = status; // Updated field name
+    }
 }

@@ -1,0 +1,91 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.landing-container {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.landing-header {
+    margin-bottom: 50px;
+}
+
+.landing-header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.landing-header p {
+    font-size: 1.2em;
+}
+
+.features-section, .audience-section {
+    margin: 50px 0;
+}
+
+.features-section h2, .audience-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.features-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features-section li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.landing-footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.landing-footer a {
+    color: #6a11cb;
+    text-decoration: none;
+}
+
+.landing-footer a:hover {
+    text-decoration: underline;
+}
